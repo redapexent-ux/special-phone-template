@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CaseCraft Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div>
+          <p class="eyebrow">Template Generator</p>
+          <h1>CaseCraft Studio</h1>
+          <p class="subtitle">
+            Build production-ready phone case graphics for the latest iPhone lineup, with safe-area
+            and camera-cutout guides.
+          </p>
+        </div>
+        <button id="downloadBtn" class="primary">Download PNG</button>
+      </header>
+
+      <main>
+        <section class="controls">
+          <div class="control-group">
+            <label for="modelSelect">iPhone model</label>
+            <select id="modelSelect"></select>
+            <p class="hint" id="modelHint"></p>
+          </div>
+
+          <div class="control-group">
+            <label for="backgroundColor">Background color</label>
+            <input type="color" id="backgroundColor" value="#0f172a" />
+          </div>
+
+          <div class="control-group">
+            <label for="accentColor">Accent gradient</label>
+            <input type="color" id="accentColor" value="#38bdf8" />
+          </div>
+
+          <div class="control-group">
+            <label for="textInput">Case text</label>
+            <input id="textInput" type="text" placeholder="Limited Edition" value="Limited Edition" />
+          </div>
+
+          <div class="control-row">
+            <div class="control-group">
+              <label for="textColor">Text color</label>
+              <input type="color" id="textColor" value="#f8fafc" />
+            </div>
+            <div class="control-group">
+              <label for="textSize">Text size</label>
+              <input id="textSize" type="range" min="36" max="200" value="92" />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="patternSelect">Background style</label>
+            <select id="patternSelect">
+              <option value="none">Solid</option>
+              <option value="grid">Fine Grid</option>
+              <option value="rays">Soft Rays</option>
+              <option value="dots">Dot Matrix</option>
+            </select>
+          </div>
+
+          <div class="control-group toggles">
+            <label>
+              <input type="checkbox" id="showGuides" checked />
+              Show cutout + safe area guides
+            </label>
+            <label>
+              <input type="checkbox" id="showBleed" checked />
+              Show bleed boundary
+            </label>
+          </div>
+
+          <div class="callout">
+            <h3>Export specs</h3>
+            <ul>
+              <li>PNG output at full device resolution.</li>
+              <li>Safe area protects camera + button clearance.</li>
+              <li>Use bleed for full-coverage prints.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="preview">
+          <div class="canvas-wrap">
+            <canvas id="templateCanvas" aria-label="Phone case template preview"></canvas>
+          </div>
+          <div class="preview-meta">
+            <div>
+              <p class="label">Canvas output</p>
+              <p id="canvasSize"></p>
+            </div>
+            <div>
+              <p class="label">Safe area</p>
+              <p id="safeArea"></p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
